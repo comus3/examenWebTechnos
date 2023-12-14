@@ -4,7 +4,7 @@ import bluebird from 'bluebird';
 const connection = await mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'YOUR PASSWORD',
+  password: 'password',
   Promise: bluebird,
 });
 
