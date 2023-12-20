@@ -104,7 +104,7 @@ app.get('/voc/addVoc',async function (request,response){
     response.redirect('/voc/');
 
 })
-app.post('/voc/deleteVoc',async function (request,response){
+app.post('/deleteVoc',async function (request,response){
     if (request.body.something != null){
         //do something
         await Words.delete({id:request.body.id});
