@@ -16,17 +16,20 @@
           <th>attempts</th>
           <th>action</th>
         </tr>
-        <% for(var i = 0; i < vocabulary.length; i++){
-            %>
+        <% for(var i = 0; i < vocabulary.length; i++){ %>
             <tr>
-                <th><%= vocabulary[i].word %></th>
-                <th><% =vocabulary[i].trad %></th>
-                <th><% = vocabulary[i].success %></th>
-                <th><%= vocabulary[i].attempts%></th>
-                <th><form action = "delete" method = "get"><input name = "id" type="hidden" value=<%= vocabulary[i].id%> id = "id"><input type="submit" value="delete"></form></th>
+                <th><%=vocabulary[i].word %></th>
+                <th><%=vocabulary[i].trad %></th>
+                <th><%=vocabulary[i].success %></th>
+                <th><%=vocabulary[i].attempts%></th>
+                <th><form method = "get" action = "deleteVoc"><input name = "id" type="hidden" value=<%=vocabulary[i].id%> id = "id"><input type="submit" value="delete"></form></th>
             </tr>
 
-            <%};%>
+        <%}%>
+        <a href="/">go back to test</a>
+
+
+
 
 
         

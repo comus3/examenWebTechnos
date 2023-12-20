@@ -91,7 +91,7 @@ app.get('/voc/',async function (request,response){
     //the add voc base page
     //afficher tout le tableau
     const vocabulary = await Words.loadMany();
-    response.render("addVoc.ejs",vocabulary);
+    response.render("addVoc.ejs",{vocabulary});
 })
 
 app.get('/voc/addVoc',async function (request,response){
