@@ -97,9 +97,8 @@ app.get('/voc/',async function (request,response){
 app.get('/voc/addVoc',async function (request,response){
     if (request.query.something != null){
         //do something
-        let newQuestion = Question(request.query.word,request.query.trad);
-        let word = await Words.update(Question);
-        await word.save();
+        const newQuestion = Words();
+        newQuestion.update({word : request.query.word,trad : request.query.trad});
     }
     response.redirect('/voc/');
 
