@@ -7,7 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Hello welcome to trad page</h1>
 
+    <h5>your last response result:</h5>
+    <%= lastAnswer %>
+    <h3>now try another</h3>
+    <form action = "try" method="post">
+        <label>What is the traduction of : <%= newQuestion.word %> </label>
+        <input name = "word" type="hidden" value=<%=newQuestion.word%> id = "word">
+        <input name = "answer" type="text" placeholder="Type your answer" id = "answer">
+        <input type="submit" value="Submit">
+    </form>
+    <h5>you tried this word <%= attemptsData.attempts%> times and successfully found it <%= attemptsData.success %> times </h5>
+
+    <a href="/voc">add and delete voc</a>
     <script src="home.js"></script>
+
+
 </body>
 </html>
