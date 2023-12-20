@@ -104,10 +104,10 @@ app.get('/voc/addVoc',async function (request,response){
     response.redirect('/voc/');
 
 })
-app.get('/deleteVoc',async function (request,response){
-    if (request.query.something != null){
+app.post('/voc/deleteVoc',async function (request,response){
+    if (request.body.something != null){
         //do something
-        Words.delete({id:request.query.id});
+        await Words.delete({id:request.body.id});
     }
     response.redirect('/voc/');
 })

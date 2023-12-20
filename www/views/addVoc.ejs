@@ -22,7 +22,7 @@
                 <th><%=vocabulary[i].trad %></th>
                 <th><%=vocabulary[i].success %></th>
                 <th><%=vocabulary[i].attempts%></th>
-                <th><form method = "get" action = "deleteVoc"><input name = "id" type="hidden" value=<%=vocabulary[i].id%> id = "id"><input type="submit" value="delete"></form></th>
+                <th><form method = "post" action = "deleteVoc"><input name = "id" type="hidden" value=<%=vocabulary[i].id%> id = "id"><input type="submit" value="delete"></form></th>
             </tr>
 
         <%}%>
