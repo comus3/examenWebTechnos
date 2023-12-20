@@ -1,5 +1,6 @@
 import express from "express";
 import Words from "./models/words.js";
+import { attempt } from "bluebird";
 const app = express();
 app.use(express.static("public"));
 
@@ -71,6 +72,8 @@ app.post('/try/',async function (request,response){
             const lastAnswer = "en effet la traduction de " + String(oldQuestion.word) + " est bel et bien " + String(oldQuestion.trad);
             //bonne reponse
             loadDataAnswer(response,lastAnswer,oldQuestionData);
+            const old = await Words.load({word:request.body.word});
+            old.success = old.success + 1;
             
         }
         else
@@ -79,6 +82,8 @@ app.post('/try/',async function (request,response){
             const lastAnswer = "et non, la traduction de "  + String(oldQuestion.word) + " etait "+ String(oldQuestion.trad);
             loadDataAnswer(response,lastAnswer,oldQuestionData);
         }
+        old.attempts = old.attempts + 1;
+        old.update({word:old.word})
         
     }
     else
