@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="public/styles.css">
 </head>
 <body>
-    <h1>Hello welcome to trad page</h1>
+    <header>
+        <h1 class="main-heading">Hello welcome to trad page</h1>
+    </header>
 
-    <h5>your last response result:</h5>
-    <%= lastAnswer %>
-    <h3>now try another</h3>
-    <form action = "try" method="post">
-        <label>What is the traduction of : <%= newQuestion.word %> </label>
-        <input name = "word" type="hidden" value=<%=newQuestion.word%> id = "word">
-        <input name = "answer" type="text" placeholder="Type your answer" id = "answer">
-        <input type="submit" value="Submit">
-    </form>
-    <h5>you tried this word <%= attemptsData.attempts%> times and successfully found it <%= attemptsData.success %> times </h5>
+    <section class="response-section">
+        <h5>Your last response result:</h5>
+        <%= lastAnswer %>
+        <h3>Now try another</h3>
+        <form action="try" method="post" class="try-form">
+            <label for="answer">What is the translation of: <%= newQuestion.word %> </label>
+            <input name="word" type="hidden" value="<%=newQuestion.word%>" id="word">
+            <input name="answer" type="text" placeholder="Type your answer" id="answer">
+            <input type="submit" value="Submit">
+        </form>
+        <h5>You tried this word <%= attemptsData.attempts %> times and successfully found it <%= attemptsData.success %> times</h5>
+    </section>
 
-    <a href="/voc">add and delete voc</a>
+    <nav>
+        <a href="/voc">Add and delete vocabulary</a>
+    </nav>
+
     <script src="home.js"></script>
-
-
 </body>
 </html>
