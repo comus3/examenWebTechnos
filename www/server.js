@@ -94,7 +94,7 @@ app.get('/voc/',async function (request,response){
     response.render("addVoc.ejs",{vocabulary});
 })
 
-app.get('/voc/addVoc',async function (request,response){
+app.get('/addVoc',async function (request,response){
     if (request.query.something != null){
         //do something
         const newQuestion = Words();
@@ -128,7 +128,7 @@ app.get('/',async function (request,response){
 
 
 
-app.listen(80, function(){
+app.listen(3000, function(){
     console.log("Server ok");
 });
 
